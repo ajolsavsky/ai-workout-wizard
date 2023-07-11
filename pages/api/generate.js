@@ -3,29 +3,11 @@ import { generateText } from "@/palm2Services"
 
 const generatePrompt = (userData) => {
 	return `
-		Based on the user data below, generate an exercise plan for a week, with 3 exercise per day, with saturday and sunday as rest days.
-		Please share the response in below sample JSON format:
-		[
-			{
-				"day": "Monday",
-				"exercises": [
-					{
-						"exercise": "...", 
-						"sets": "...", 
-						"reps": "...", 
-						"weight": "...",
-						"rest": "..."
-					},
-				]
-			},
-			...
-		]
-		
-		"reps" in JSON is a string with number of reps with weight if needed
-		"rest" in JSON is the rest to be taken between sets
-		"weight" in JSON is the weight to be used for exercise, it should be with units if needed e.g. 10 lbs, else make it "---"
-		
-		For rest days return only one javascript object in exercises array with exercise field as "Rest Day" and remaining fields as "---"
+	Based on the user data below, generate an SOP for our digital marketing agency for any client website. The first input is who the SOP is for. The second input is what this SOP is about. The third input is what the SOP is centered around.
+
+	Can you write a 30-word summary for each of the following criteria for that SOP: goal, ideal outcome, prerequisites and requirements, why this is important, where this is done, when this is done, and who does this?
+
+	Can you make sure you do not change the name of each each criteria and style it in a bolded format and followed by a colon, then write the summary and go tot he next line at the end of the summary, Please leave the title of each criteria exactly as indicated above.
 		
 		user data:
 		${JSON.stringify(userData)}
@@ -38,16 +20,15 @@ export default async function handler(req, res) {
 	if (req.method === 'POST') {
 		let result;
 		const {
-			height,
-			weight,
+			subject,
+			detail,
 			age,
 			role,
-			fitnessLevel,
 			model,
 		} = req.body
 
 		// generate the prompt
-		const prompt = generatePrompt({ height, weight, age, role, fitnessLevel })
+		const prompt = generatePrompt({ subject, detail, age, role })
 
 		if (model.toLowerCase() === 'openai') {
 			result = await getCompletion(prompt)

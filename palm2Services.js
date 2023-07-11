@@ -10,14 +10,14 @@ const client = new TextServiceClient({
 
 const extractJSON = (output) => {
 	// Remove unnecessary characters and newlines
-	const jsonStartIndex = output.indexOf("[");
-	const jsonEndIndex = output.lastIndexOf("]") + 1;
-	const json = output.substring(jsonStartIndex, jsonEndIndex);
+	// const jsonStartIndex = output.indexOf("[");
+	// const jsonEndIndex = output.lastIndexOf("]") + 1;
+	// const json = output.substring(jsonStartIndex, jsonEndIndex);
 
 	console.log(output);
 
 	// Parse the JSON
-	return JSON.parse(json);
+	return output;
 }
 
 export const generateText = async (prompt) => {

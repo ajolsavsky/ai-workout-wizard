@@ -18,17 +18,3 @@ export const ROLES = [
 		title: 'Developer'
 	}
 ]
-export const FITNESS_LEVELS = [
-	{
-		value: 'beginner',
-		title: 'Beginner'
-	},
-	{
-		value: 'intermediate',
-		title: 'Intermediate'
-	},
-	{
-		value: 'advanced',
-		title: 'Advanced'
-	}
-]
