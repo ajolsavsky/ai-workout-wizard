@@ -38,7 +38,7 @@ export default function UserForm({ setData, setLoading, loading }) {
 			response = await response.json()
 			setLoading(false)
 			setData(response.result)
-			toast.success("Workout generated!")
+			toast.success("SOP generated!")
 		} else {
 			response = await response.json()
 			console.error('error')
