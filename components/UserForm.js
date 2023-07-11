@@ -1,7 +1,7 @@
 import { BiSolidSend } from "react-icons/bi";
 import InputText from "@/components/form/InputText";
 import CustomSelect from "@/components/form/CustomSelect";
-import { AI_SOURCES, FITNESS_LEVELS, ROLES, GOALS } from "@/constants";
+import { AI_SOURCES, FITNESS_LEVELS, ROLES } from "@/constants";
 import toast from "react-hot-toast";
 
 const GENERATE_URL = "/api/generate"
@@ -19,7 +19,6 @@ export default function UserForm({ setData, setLoading, loading }) {
 		const age = event.target.elements.age.value;
 		const role = event.target.elements.role.value;
 		const fitnessLevel = event.target.elements.fitnessLevel.value;
-		const goal = event.target.elements.goal.value;
 
 		// Create an object with the form values
 		const formData = {
@@ -28,7 +27,6 @@ export default function UserForm({ setData, setLoading, loading }) {
 			age,
 			role,
 			fitnessLevel,
-			goal,
 			model,
 		};
 
@@ -90,14 +88,6 @@ export default function UserForm({ setData, setLoading, loading }) {
 						id={'fitnessLevel'}
 						label={'Fitness Level'}
 						values={FITNESS_LEVELS}
-					/>
-				</div>
-
-				<div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
-					<CustomSelect
-						id={'goal'}
-						label={'Goal'}
-						values={GOALS}
 					/>
 				</div>
 			</div>

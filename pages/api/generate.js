@@ -43,12 +43,11 @@ export default async function handler(req, res) {
 			age,
 			role,
 			fitnessLevel,
-			goal,
 			model,
 		} = req.body
 
 		// generate the prompt
-		const prompt = generatePrompt({ height, weight, age, role, fitnessLevel, goal })
+		const prompt = generatePrompt({ height, weight, age, role, fitnessLevel })
 
 		if (model.toLowerCase() === 'openai') {
 			result = await getCompletion(prompt)

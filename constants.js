@@ -32,22 +32,3 @@ export const FITNESS_LEVELS = [
 		title: 'Advanced'
 	}
 ]
-
-export const GOALS = [
-	{
-		value: 'weight-loss',
-		title: 'Weight Loss'
-	},
-	{
-		value: 'muscle-gain',
-		title: 'Muscle Gain'
-	},
-	{
-		value: 'overall-fitness',
-		title: 'Overall Fitness'
-	},
-	{
-		value: 'stress-reduction',
-		title: 'Stress Reduction'
-	}
-]
