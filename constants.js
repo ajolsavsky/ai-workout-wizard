@@ -8,14 +8,14 @@ export const AI_SOURCES = [
 		title: 'Google PaLM'
 	}
 ]
-export const GENDERS = [
+export const ROLES = [
 	{
-		value: 'female',
-		title: 'Female'
+		value: 'designer',
+		title: 'Designer'
 	},
 	{
-		value: 'male',
-		title: 'Male'
+		value: 'developer',
+		title: 'Developer'
 	}
 ]
 export const FITNESS_LEVELS = [

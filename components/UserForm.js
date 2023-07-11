@@ -1,12 +1,12 @@
-import {BiSolidSend} from "react-icons/bi";
+import { BiSolidSend } from "react-icons/bi";
 import InputText from "@/components/form/InputText";
 import CustomSelect from "@/components/form/CustomSelect";
-import {AI_SOURCES, FITNESS_LEVELS, GENDERS, GOALS} from "@/constants";
+import { AI_SOURCES, FITNESS_LEVELS, ROLES, GOALS } from "@/constants";
 import toast from "react-hot-toast";
 
 const GENERATE_URL = "/api/generate"
 
-export default function UserForm({setData, setLoading, loading}) {
+export default function UserForm({ setData, setLoading, loading }) {
 
 	const handleSubmit = async (event) => {
 		event.preventDefault(); // Prevent form submission and page reload
@@ -17,7 +17,7 @@ export default function UserForm({setData, setLoading, loading}) {
 		const height = event.target.elements.height.value;
 		const weight = event.target.elements.weight.value;
 		const age = event.target.elements.age.value;
-		const gender = event.target.elements.gender.value;
+		const role = event.target.elements.role.value;
 		const fitnessLevel = event.target.elements.fitnessLevel.value;
 		const goal = event.target.elements.goal.value;
 
@@ -26,7 +26,7 @@ export default function UserForm({setData, setLoading, loading}) {
 			height,
 			weight,
 			age,
-			gender,
+			role,
 			fitnessLevel,
 			goal,
 			model,
@@ -64,24 +64,24 @@ export default function UserForm({setData, setLoading, loading}) {
 					/>
 				</div>
 			</div>
-			<hr className={"my-5"}/>
+			<hr className={"my-5"} />
 			<div className="flex flex-wrap -mx-3 mb-3">
 				<div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
-					<InputText label={"Height (cm)"} id={"height"}/>
+					<InputText label={"Height (cm)"} id={"height"} />
 				</div>
 				<div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
-					<InputText label={"Weight (kg)"} id={"weight"}/>
+					<InputText label={"Weight (kg)"} id={"weight"} />
 				</div>
 				<div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
-					<InputText label={"Age (yr)"} id={"age"}/>
+					<InputText label={"Age (yr)"} id={"age"} />
 				</div>
 			</div>
 			<div className="flex flex-wrap -mx-3 mb-2">
 				<div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
 					<CustomSelect
-						id={'gender'}
-						label={'Gender'}
-						values={GENDERS}
+						id={'role'}
+						label={'Role'}
+						values={ROLES}
 					/>
 				</div>
 
@@ -107,7 +107,7 @@ export default function UserForm({setData, setLoading, loading}) {
 					disabled={loading}
 					className="rounded-md bg-primary-main px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-primary-dark disabled:bg-primary-light focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
 					{loading ? 'Please wait...' :
-						<div className={'flex justify-center items-center gap-2'}>Submit <BiSolidSend/></div>}
+						<div className={'flex justify-center items-center gap-2'}>Submit <BiSolidSend /></div>}
 				</button>
 			</div>
 		</form>

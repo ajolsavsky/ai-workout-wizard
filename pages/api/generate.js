@@ -1,5 +1,5 @@
-import {getCompletion} from "@/openAiServices";
-import {generateText} from "@/palm2Services"
+import { getCompletion } from "@/openAiServices";
+import { generateText } from "@/palm2Services"
 
 const generatePrompt = (userData) => {
 	return `
@@ -41,14 +41,14 @@ export default async function handler(req, res) {
 			height,
 			weight,
 			age,
-			gender,
+			role,
 			fitnessLevel,
 			goal,
 			model,
 		} = req.body
 
 		// generate the prompt
-		const prompt = generatePrompt({height, weight, age, gender, fitnessLevel, goal})
+		const prompt = generatePrompt({ height, weight, age, role, fitnessLevel, goal })
 
 		if (model.toLowerCase() === 'openai') {
 			result = await getCompletion(prompt)
@@ -57,9 +57,9 @@ export default async function handler(req, res) {
 			result = await generateText(prompt)
 		}
 
-		return res.json({result})
+		return res.json({ result })
 	} else {
 		// Handle other HTTP methods or return an appropriate error response
-		res.status(405).json({error: 'Method Not Allowed'});
+		res.status(405).json({ error: 'Method Not Allowed' });
 	}
 }
