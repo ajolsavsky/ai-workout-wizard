@@ -4,7 +4,7 @@ export default function Header() {
 			<div className={"max-w-5xl mx-auto text-left"}>
 				<h1
 					className={"inline-block text-transparent bg-clip-text text-5xl font-bold text-zinc-600"}>
-					Pax Palm API Testing Ground
+					Pax Google PaLM API Testing Ground
 				</h1>
 			</div>
 		</div>
