@@ -9,12 +9,10 @@ const ExerciseDay = ({ day }) => (
 
 export default function WeeklyPlan({ data }) {
 	return (
-		data.length > 0
-			? <div>
-				{
-					data
-				}
-			</div>
-			: undefined
-	)
+		data.length > 0 ? (
+			<div dangerouslySetInnerHTML={{ __html: data }}></div>
+		) : (
+			undefined
+		)
+	);
 }
