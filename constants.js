@@ -16,5 +16,13 @@ export const ROLES = [
 	{
 		value: 'developer',
 		title: 'Developer'
+	},
+	{
+		value: 'strategist',
+		title: 'Strategist'
+	},
+	{
+		value: 'project manager',
+		title: 'Project Manager'
 	}
 ]

@@ -1,6 +1,8 @@
+import React, { useState } from 'react';
 import { BiSolidSend } from "react-icons/bi";
 import InputText from "@/components/form/InputText";
 import CustomSelect from "@/components/form/CustomSelect";
+import CustomCheckbox from "@/components/form/CustomCheckbox";
 import { AI_SOURCES, ROLES } from "@/constants";
 import toast from "react-hot-toast";
 
@@ -8,13 +10,19 @@ const GENERATE_URL = "/api/generate"
 
 export default function UserForm({ setData, setLoading, loading }) {
 
+	const handleRoleChange = (selectedRoles) => {
+		// Update the selected roles state
+		setRoles(selectedRoles);
+	};
+	const [roles, setRoles] = useState([]);
+
 	const handleSubmit = async (event) => {
 		event.preventDefault(); // Prevent form submission and page reload
 		setLoading(true)
 
 		// Retrieve the form field values
 		const model = event.target.elements.model.value;
-		const role = event.target.elements.role.value;
+		const role = roles; // Use the selected roles from the state
 		const subject = event.target.elements.subject.value;
 		const detail = event.target.elements.detail.value;
 
@@ -60,10 +68,12 @@ export default function UserForm({ setData, setLoading, loading }) {
 			</div>
 			<div className="flex flex-wrap -mx-3 mb-2">
 				<div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
-					<CustomSelect
+					<CustomCheckbox
 						id={'role'}
 						label={'Role'}
 						values={ROLES}
+						selectedValues={roles}
+						onChange={handleRoleChange}
 					/>
 				</div>
 			</div>
