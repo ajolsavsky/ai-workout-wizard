@@ -16,9 +16,11 @@ export default function Home() {
 			<Head>
 				<title>AI Workout Wizard</title>
 			</Head>
-			<div className={'w-full flex-grow'}>
+			<div className="flex-grow">
 				<Header />
-				<div className={'mt-24 px-4 my-6'}>
+			</div>
+			<div className={'w-full flex-grow'}>
+				<div className={'px-4'}>
 					<div className={'max-w-5xl mx-auto'}>
 						<Intro />
 						<div className={'w-full'}>

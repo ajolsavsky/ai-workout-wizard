@@ -1,6 +1,6 @@
 export default function Intro() {
 	return (
-		<div className={'text-md text-zinc-600 mt-3'}>
+		<div className={'text-md text-zinc-600'}>
 			<p className={"font-semibold text-2xl"}>
 				Welcome to the PAX Palm API test!
 			</p>
