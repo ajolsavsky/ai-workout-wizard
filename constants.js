@@ -1,8 +1,8 @@
 export const AI_SOURCES = [
-	// {
-	// 	value: 'openai',
-	// 	title: 'OpenAI GPT'
-	// },
+	{
+		value: 'openai',
+		title: 'OpenAI GPT'
+	},
 	{
 		value: 'palm',
 		title: 'Google PaLM'
